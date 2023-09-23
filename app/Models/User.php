@@ -93,4 +93,19 @@ class User extends Authenticatable
     {
         return $this->hasManyThrough(Meme::class, Like::class);
     }
+
+    /**
+     * HELPERS
+     * 
+     */
+
+    /**
+     * checks if user is an admin
+     * 
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }

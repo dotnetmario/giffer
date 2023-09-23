@@ -41,7 +41,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
     // admin area
-    Route::prefix('/admin')->group(function(){
+    Route::prefix('/admin')->middleware(['admin'])->group(function(){
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     });
 

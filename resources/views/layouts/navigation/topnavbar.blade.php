@@ -245,10 +245,27 @@
                 </a>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="mdi mdi-logout me-1"></i>
                     <span>Logout</span>
-                </a>
+                </a> --}}
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a href="{{ route('logout') }}" class="dropdown-item notify-item"
+                        onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                        <i class="mdi mdi-logout me-1"></i>
+                        <span>Logout</span>
+                    </a>
+
+                    {{-- <x-responsive-nav-link :href="route('logout')"
+                        onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-responsive-nav-link> --}}
+                </form>
             </div>
         </li>
 

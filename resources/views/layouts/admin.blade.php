@@ -8,10 +8,6 @@
 
     <title>{{ config('app.name', 'Giffer') }}</title>
 
-    {{-- <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" /> --}}
-
     <link href="{{ asset('css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
     <link href="{{ asset('css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
@@ -75,9 +71,6 @@
     @include('layouts.navigation.rightsidebar')
 
     <!-- bundle -->
-    {{-- <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script> --}}
-
     <script src="{{ asset('js/vendor.min.js') }}"></script>
     <script src="{{ asset('js/app.min.js') }}"></script>
 </body>
