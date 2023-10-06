@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Feed;
+use App\Http\Requests\App\HomeFeedRequest;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function home(HomeFeedRequest $request)
     {
-        // dd($_SERVER);
-        return view('fo/home');
+        $memes = (new Feed)->homeFeed($request->input('cats'), $request->input('tags'));
+
+        return view('fo/home', compact('memes'));
     }
 }

@@ -17,6 +17,7 @@ class Meme extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'type',
         'title',
         'body',
         'file'

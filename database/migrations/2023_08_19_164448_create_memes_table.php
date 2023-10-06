@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('memes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('rank')->default(0);
+            $table->enum('type', ['text', 'photo', 'gif', 'video', 'link'])->default('photo');
             $table->string('title')->nullable();
             $table->text('body')->nullable();
-            $table->text('file');
+            $table->text('file')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

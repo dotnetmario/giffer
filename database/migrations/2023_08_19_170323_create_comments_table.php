@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('meme_id');
+            $table->enum('type', ['text', 'photo', 'gif', 'video', 'link'])->default('text');
             $table->text('content');
+            $table->text('file')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
